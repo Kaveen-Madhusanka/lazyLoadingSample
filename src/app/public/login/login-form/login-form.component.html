@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" class="normal-form" (ngSubmit)="submitForm()">
+
+  <mat-form-field>
+    <input formControlName="email" matInput placeholder="Email">
+    <mat-error>This field is mandatory.</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="password" type="password" matInput placeholder="Password">
+    <mat-error>This field is mandatory.</mat-error>
+  </mat-form-field>
+
+  <div class="button-row">
+    <button class="mx-2" mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+    <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+  </div>
+</form>
